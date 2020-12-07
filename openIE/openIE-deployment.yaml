@@ -4,24 +4,24 @@ apiVersion: apps/v1
 #
 kind: Deployment
 metadata:
-  name: openIE-deployment
+  name: openie-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: openIE
+      app: openie
   template:
     metadata:
       labels:
-        app: openIE
+        app: openie
     spec:
       containers:
-      - name: openIE
+      - name: openie
         image: bexi7507/worker-openie:v1
         ports:
         - containerPort: 9000
         env:
           - name: mongoDB_HOST
-            value: " "
+            value: "10.3.248.240"
           - name: RABBITMQ_HOST
-            value: " "          
+            value: "10.3.244.125"          
