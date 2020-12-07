@@ -7,13 +7,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongoDB
+  name: mongodb
   labels:
-    app: mongoDB
+    app: mongodb
 spec:
   ports:
     - protocol: "TCP"
       port: 27017
       targetPort: 27017
   selector:
-    app: mongoDB
+    app: mongodb
