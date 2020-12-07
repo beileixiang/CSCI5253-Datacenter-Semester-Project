@@ -47,7 +47,7 @@ def download(hash, addr, output, debug=False):
 host = sys.argv[1]
 cmd = sys.argv[2]
 
-addr = 'http://{}:5000'.format(host)
+addr = 'http://{}:80'.format(host)
 
 if cmd == 'upload':
     filedir = sys.argv[3]

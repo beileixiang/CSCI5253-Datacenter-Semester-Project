@@ -1,7 +1,7 @@
 import pymongo
 from pymongo import MongoClient
 
-import jsonpickle, pickle
+import pickle
 import io, os, sys
 import pika
 import secrets, requests
