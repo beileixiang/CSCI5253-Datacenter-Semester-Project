@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+#
+# Create a deployment ( https://kubernetes.io/docs/concepts/workloads/controllers/deployment/ )
+#
+kind: Deployment
+metadata:
+  name: rest-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rest-server
+  template:
+    metadata:
+      labels:
+        app: rest-server
+    spec:
+      containers:
+      - name: rest-server
+        image: bexi7507/rest-server-openie:v1
+        ports:
+        - containerPort: 5000
+        env:
+          - name: mongoDB_HOST
+            value: " "
+          - name: RABBITMQ_HOST
+            value: " "  

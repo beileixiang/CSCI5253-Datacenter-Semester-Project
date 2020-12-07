@@ -1,0 +1,8 @@
+0.8686585816925303	everything	see ARCH.txt For	object
+0.8686585816925303	everything	see ARCH.txt For	runnable object
+0.8686585816925303	everything	see ARCH.txt For	quick object
+0.8686585816925303	everything	see	ARCH.txt
+0.8686585816925303	everything	see ARCH.txt For	quick runnable object
+0.7753021525255923	everything	run	edu.stanford.nlp.loglinear.CoNLLBenchmark
+1.0	core	in	test package
+0.7753021525255923	everything	run edu.stanford.nlp.loglinear.CoNLLBenchmark in	core 's test package

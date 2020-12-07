@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+#
+# Create a deployment ( https://kubernetes.io/docs/concepts/workloads/controllers/deployment/ )
+#
+kind: Deployment
+metadata:
+  name: openIE-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: openIE
+  template:
+    metadata:
+      labels:
+        app: openIE
+    spec:
+      containers:
+      - name: openIE
+        image: bexi7507/worker-openie:v1
+        ports:
+        - containerPort: 9000
+        env:
+          - name: mongoDB_HOST
+            value: " "
+          - name: RABBITMQ_HOST
+            value: " "          
