@@ -1,16 +1,16 @@
 apiVersion: apps/v1 #  for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
 kind: Deployment
 metadata:
-  name: mongoDB
+  name: mongodb
 spec:
   selector:
     matchLabels:
-      app: mongoDB
+      app: mongodb
   replicas: 1
   template:
     metadata:
       labels:
-        app: mongoDB
+        app: mongodb
     spec:
       containers:
       - name: master

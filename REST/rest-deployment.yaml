@@ -22,6 +22,6 @@ spec:
         - containerPort: 5000
         env:
           - name: mongoDB_HOST
-            value: " "
+            value: "10.3.248.240"
           - name: RABBITMQ_HOST
-            value: " "  
+            value: "10.3.244.125"  
