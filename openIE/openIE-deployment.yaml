@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: openie
-        image: bexi7507/worker-openie:v1
+        image: bexi7507/worker-openie:v6
         ports:
         - containerPort: 9000
         env:

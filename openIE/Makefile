@@ -1,6 +1,6 @@
 REPO=bexi7507
 IMAGE=worker-openie
-TAG=v1
+TAG=v6
 
 build:
 	docker build -t $(IMAGE):$(TAG) .
