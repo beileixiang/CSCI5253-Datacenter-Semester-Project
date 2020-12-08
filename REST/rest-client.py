@@ -6,7 +6,7 @@ import sys, os
 import shutil
 import secrets
 
-def upload(folder, addr, debug=False):
+def upload(folder, addr):
     url = addr + '/upload'
     token = secrets.token_hex(16)
 
@@ -15,10 +15,8 @@ def upload(folder, addr, debug=False):
             f = open(folder + '/' + filename, 'r').read()
             data = {"token":token, "filename":filename,"content":f}
             response = requests.post(url, json=data)
-            if debug:
-                # decode response
-                print("Response is", response)
-                print(json.loads(response.text))
+    print("Response is", response)
+    print(json.loads(response.text))
 
 def download(hash, addr, output, debug=False):
     dir = output
@@ -36,7 +34,7 @@ def download(hash, addr, output, debug=False):
             filename = filename.split('.')[0]
             with open(output + '/' + filename + '.tsv', 'w') as f:
                 f.write(content)
-        print('Your converted files have been downloaded.')
+        print('Your converted files have been downloaded to the output folder.')
 
     if debug:
         # decode response
@@ -47,13 +45,13 @@ def download(hash, addr, output, debug=False):
 host = sys.argv[1]
 cmd = sys.argv[2]
 
-addr = 'http://{}:80'.format(host)
+addr = 'http://{}'.format(host)
 
 if cmd == 'upload':
     filedir = sys.argv[3]
-    upload(filedir, addr, debug = True)
+    upload(filedir, addr)
 elif cmd == 'download':
     hash = sys.argv[3]
     output = sys.argv[4]
-    download(hash, addr, output, debug = True)
+    download(hash, addr, output, debug = False)
 

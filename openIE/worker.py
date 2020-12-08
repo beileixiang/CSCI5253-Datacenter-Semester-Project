@@ -1,10 +1,6 @@
 import pymongo
 from pymongo import MongoClient
 
-<<<<<<< HEAD
-import pickle
-=======
->>>>>>> 5188a30eac94e454e019dbfdb0502844392e018d
 import io, os, sys
 import pika
 import secrets, requests
