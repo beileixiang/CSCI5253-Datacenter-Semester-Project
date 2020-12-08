@@ -7,7 +7,7 @@ COPY --from=python:3.6 / /
 RUN  pip install pika pymongo requests 
 RUN apt-get install unzip
 
-#RUN  mkdir /app
+RUN  mkdir /files
 ADD http://nlp.stanford.edu/software/stanford-corenlp-latest.zip /
 RUN unzip stanford-corenlp-latest.zip
 

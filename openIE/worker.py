@@ -8,6 +8,7 @@ import hashlib
 
 import json
 import subprocess
+import shutil
 
 #Config
 mongoDBHost = os.getenv("mongoDB_HOST") or "localhost"
@@ -30,6 +31,12 @@ collection = db["user"]
 # hash = db.StringField()
 # originalfiles = db.DictField()
 # convertedfiles= db.DictField()
+
+# create folder
+dir = 'files'
+if os.path.exists(dir):
+    shutil.rmtree(dir)
+os.makedirs(dir)
 
 #RabbitMQ
 def callback(ch, method, properties, body):

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: rest-server
-        image: bexi7507/rest-server-openie:v1
+        image: bexi7507/rest-server-openie:v2
         ports:
         - containerPort: 5000
         env:
