@@ -90,7 +90,9 @@ def download(hash):
     response_pickled = jsonpickle.encode(response)
     return Response(response=response_pickled, status=200, mimetype="application/json")
 
-
+@app.route('/', methods=['GET'])
+def hello():
+    return '<h1> OpenIE Server</h1><p> Use a valid endpoint </p>'
 
 # start flask app
 app.run(host="0.0.0.0", port=5000) #, debug = True
